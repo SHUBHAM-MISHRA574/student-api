@@ -10,10 +10,12 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("DB Error:", err));
+// const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log("DB Error:", err));
+
 
 // Routes
 app.use("/api/students", studentRoutes);
